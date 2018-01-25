@@ -6,5 +6,16 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  characters = string.split("")
+  odds, evens = "", ""
+  characters.each_with_index do |value, index|
+    if index.odd?
+      odds += value
+      # puts "Character '#{value}' is number #{index} and ODD."
+    else
+      evens += value
+      # puts "Character '#{value}' is number #{index} and EVEN."
+    end
+  end
+  return_odds ? odds : evens
 end
